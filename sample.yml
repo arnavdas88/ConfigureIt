@@ -1,0 +1,6 @@
+DummyClass:
+    param_a:
+        DummyParam:
+            param_a: 24
+    # param_b: "HI"
+    param_c: "hello"

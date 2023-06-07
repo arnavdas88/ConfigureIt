@@ -1,0 +1,10 @@
+Database:
+  admin:
+    AdminCredentials:
+      username: AdminUser
+      password: MyRandomDummyPassword
+  shards: 512
+  page_size: 4096
+  read_heads: 12
+  write_heads: 12
+  sequential_write: false

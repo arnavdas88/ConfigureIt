@@ -1,0 +1,17 @@
+DatabaseConfiguration:
+  configuration:
+    Database:
+      admin:
+        AdminCredentials:
+          username: AdminUser
+          password: MyRandomDummyPassword
+      shards: 512
+      page_size: 4096
+      read_heads: 12
+      write_heads: 12
+      sequential_write: true
+
+  serve:
+    Serve:
+      host: 0.0.0.0
+      port: 4444

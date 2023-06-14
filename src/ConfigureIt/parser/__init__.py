@@ -23,26 +23,13 @@ class Parser:
     filetype : ConfigType, optional
         The type of configuration file parser to use, by default ConfigType.YAML
 
-    Attributes
-    ----------
-    filename : str
-        The filename of the configuration file
-    filetype : ConfigType
-        The type of configuration file parser
-
-    Methods
-    -------
-    __init__
-        Initializes a Parser object.
-    __call__
-        Parses the namespace of a module.
-
     Examples
     --------
-    ```python
-    prsr = Parser(filename="sample.yml")
-    prsr(module=sample_class)
-    ```
+
+    .. code:: python
+
+        prsr = Parser(filename="sample.yml")
+        prsr(module=sample_class)
     """
     def __init__(self, filename = "config.yml", filetype:ConfigType=ConfigType.YAML) -> None:
         """Initialize a Parser object.

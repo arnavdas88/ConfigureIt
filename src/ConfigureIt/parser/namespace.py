@@ -21,25 +21,22 @@ class Namespace:
     package : module
         The imported module to load the namespace from
     filter : Callable, optional
-        A filter function to selectively include elements in the namespace, by default default_filter
+        A filter function to selectively include elements in the namespace, by default :code:`default_filter` which only maps public classes.
 
     Attributes
     ----------
     namespace : dict
         The dictionary that holds the filtered elements of the module's namespace.
 
-    Methods
-    -------
-    __init__
-        Initializes a Namespace object.
-
     Examples
     --------
-    ```python
-    import my_module
 
-    ns = Namespace(my_module, filter = ... )
-    ```
+    .. code:: python
+
+        import my_module
+
+        ns = Namespace(my_module, filter = ... )
+        ns.namespace
     """
 
     def __init__(self, package, filter:Callable = default_filter) -> None:

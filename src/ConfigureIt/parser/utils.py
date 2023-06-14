@@ -15,28 +15,31 @@ def get_object( configuration:Mapping, mapping:Mapping[str, object], ) -> Any:
 
         Example
         -------
-        A mapping of `{"param_a": 5, "param_b": "HI"}` will create a class like
-        ```python
-        class(
-            param_a = 5,
-            param_b = "HI"
-        )
-        ```
+        A mapping of :code:`{"param_a": 5, "param_b": "HI"}` will create a class like
 
-        A mapping of `{"param_a": {"Param": {"param_a": 23}}, "param_b": "HI",}` will create a class like
-        ```python
-        class(
-            param_a = DummyParam(param_a = 23),
-            param_b = "HI"
-        )
-        ```
+        .. code:: python
+
+            class(
+                param_a = 5,
+                param_b = "HI"
+            )
+
+        A mapping of :code:`{"param_a": {"Param": {"param_a": 23}}, "param_b": "HI",}` will create a class like
+
+        .. code:: python
+
+            class(
+                param_a = DummyParam(param_a = 23), # Param maps to DummyParam
+                param_b = "HI"
+            )
+
     mapping : Mapping[str, object]
         A dictionary mapping of names associated with their classes.
 
         Example
         -------
-        A mapping `{"Dummy": DummyClass, "Param": DummyParam}` will let the "Dummy" key of the `configuration` map to the
-        `DummyClass()` class, and the "Param" key to the `DummyParam()` class.
+        A mapping :code:`{"Dummy": DummyClass, "Param": DummyParam}` will let the "Dummy" key of the `configuration` map to the
+        :code:`DummyClass()` class, and the "Param" key to the `DummyParam()` class.
 
 
     Returns
@@ -45,20 +48,24 @@ def get_object( configuration:Mapping, mapping:Mapping[str, object], ) -> Any:
 
     Example
     -------
-    To create a `DummyClass` class object, equivalent to `DummyClass(param_a = 5, param_b = "HI")`, the `get_object`
+    To create a `DummyClass` class object, equivalent to :code:`DummyClass(param_a = 5, param_b = "HI")`, the `get_object`
     will look like as follows,
-    ```python
-    >>> get_object(
-            configuration = (
-                "Dummy",
-                {"param_a": 5, "param_b": "HI"}
-            ),
-            mapping={
-                "Dummy": DummyClass
-            }
-        )
-    <DummyClass object at 0x7f7d4c82c310>
-    ```
+
+    .. code:: python
+
+        >>> get_object(
+                configuration = (
+                    "Dummy",
+                    {"param_a": 5, "param_b": "HI"}
+                ),
+                mapping={
+                    "Dummy": DummyClass
+                }
+            )
+
+        <DummyClass object at 0x7f7d4c82c310>
+
+    :meta public:
     """
     object_type, keyword_arguments = configuration
     object_class = mapping[object_type]
@@ -83,6 +90,9 @@ class AttributeType(StrEnum):
     Function = "DEF"
 
 def create_class_proposition(object_class, keys):
+    """
+    :meta private:
+    """
     proposition = {
         AttributeType.Constructor: [],
         AttributeType.Function: []
@@ -93,6 +103,9 @@ def create_class_proposition(object_class, keys):
     return proposition
 
 def segregate_class_attribute_types(object_class, keys):
+    """
+    :meta private:
+    """
     constructor_parameters = object_class.__init__.__annotations__
     function_definitions = [ def_name for def_name in dir(object_class) if not def_name.startswith("__") ]
 

@@ -26,6 +26,7 @@ author = 'Arnav Das'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1.0a0'
+version = '0.1.0a0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -38,6 +39,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.autosummary',  # Create neat summary tables
+
+    'sphinx_simplepdf', # PDF
 ]
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
 
@@ -58,6 +61,7 @@ exclude_patterns = []
 #
 # html_theme = 'alabaster'
 html_theme = 'pydata_sphinx_theme'
+# html_theme = 'sphinx_simplepdf'
 html_title = f"{project}"
 
 html_theme_options = {

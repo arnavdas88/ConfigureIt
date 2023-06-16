@@ -47,6 +47,7 @@ In the above example, we import the necessary modules and define the path to the
 Next, we use the `syslog` instance to load the `database` module and create objects based on the configuration defined in the file. The objects are created and stored in memory, ready for use.
 
 Finally, we can access and utilize the created objects, such as calling the `serve()` method on the Database object.
+
 ## Configuration File
 
 The configuration file (e.g., `database.yml`) follows the syntax of the chosen format (YAML, TOML, or JSON) and defines the necessary settings for your software. Here's an example of a YAML configuration file for the `database` module:

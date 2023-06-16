@@ -42,7 +42,7 @@ that looks like,
 
                     backup: int = 24 * 7,
 
-                    sequential_write: int = False
+                    sequential_write: bool = False
                     ):
             # Here goes the code for the database constructor.
             ...

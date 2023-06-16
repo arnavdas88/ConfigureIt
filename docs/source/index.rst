@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+***************************************
 Welcome to ConfigureIt's documentation!
-=======================================
+***************************************
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
 
 Indices and tables
 ==================
@@ -17,6 +17,10 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`Example`
+
+
+Introduction
+============
 
 ConfigureIt is a powerful Python package designed to simplify
 configuration management for industry-grade software applications. It
@@ -27,7 +31,7 @@ configuration of your software, making it highly adaptable to different
 environments and deployment scenarios.
 
 Key Features
-============
+------------
 
 -  Supports YAML, TOML, and JSON configuration file formats.
 -  Automatically creates objects in memory based on the configuration
@@ -38,7 +42,7 @@ Key Features
    implementation.
 
 Installation
-============
+------------
 
 You can install ConfigureIt using pip:
 
@@ -46,8 +50,14 @@ You can install ConfigureIt using pip:
 
    $ pip install git+https://github.com/arnavdas88/ConfigureIt
 
+-----
+
+
+
+
+*****
 Usage
-=====
+*****
 
 Using ConfigureIt is straightforward. Here’s an example demonstrating
 how to load a configuration file and create objects based on the
@@ -79,7 +89,11 @@ create objects based on the configuration defined in the file. The
 objects are created and stored in memory, ready for use.
 
 Finally, we can access and utilize the created objects, such as calling
-the ``serve()`` method on the Database object. ## Configuration File
+the ``serve()`` method on the Database object.
+
+
+Configuration File
+==================
 
 The configuration file (e.g., ``database.yml``) follows the syntax of
 the chosen format (YAML, TOML, or JSON) and defines the necessary
@@ -102,29 +116,3 @@ In this example, we define the configuration settings for the
 ``Database`` object. The admin parameter is further nested to include
 the ``username`` and ``password`` properties.
 
-Contributing
-============
-
-Contributions are welcome! If you encounter any issues, have
-suggestions, or would like to contribute to the project, please feel
-free to open an issue or submit a pull request on the GitHub repository.
-
-License
-=======
-
-ConfigureIt is licensed under the MIT License. See the
-`LICENSE <https://github.com/arnavdas88/ConfigureIt/blob/master/LICENSE>`__ file for more details.
-
-Acknowledgements
-================
-
-This package was inspired by the need for efficient and flexible
-configuration management in modern software development. We would like
-to thank the open-source community for their invaluable contributions
-and support.
-
-Contact
-=======
-
-If you have any questions, suggestions, or feedback, please don’t
-hesitate to reach out to our team at arnav.das88@gmail.com .
